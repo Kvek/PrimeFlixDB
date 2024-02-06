@@ -7,6 +7,8 @@ import type { WrapperComponentType } from "@types";
 import { ReduxProvider } from "@providers/ReduxProvider";
 import { ThemeProvider } from "@providers/ThemeProvider";
 
+import { Navbar } from "@wrappers/Navbar";
+
 import { cn } from "@lib/utils";
 
 export function generateMetadata(): Metadata {
@@ -39,6 +41,7 @@ const RootLayout: WrapperComponentType = ({ children }) => (
         attribute="class"
         defaultTheme="system"
       >
+        <Navbar />
         <ReduxProvider>{children}</ReduxProvider>
       </ThemeProvider>
     </body>

@@ -78,5 +78,11 @@ module.exports = {
         },
       },
     },
+    screens: {
+      desktop: "1280px",
+      laptop: "1024px",
+      mobile: "320px",
+      tablet: "640px",
+    },
   },
 } satisfies Config;
