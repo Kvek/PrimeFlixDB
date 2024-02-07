@@ -13,7 +13,7 @@ import { cn } from "@lib/utils";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Flux 2.0",
+    title: "PrimeflixDB",
   };
 }
 
