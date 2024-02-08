@@ -31,19 +31,21 @@ const RootLayout: WrapperComponentType = ({ children }) => (
   <html suppressHydrationWarning lang="en">
     <body
       className={cn(
-        "min-h-screen bg-background font-sans antialiased",
+        "flex min-h-screen flex-col bg-background font-sans antialiased",
         notoSans.variable,
       )}
     >
-      <ThemeProvider
-        disableTransitionOnChange
-        enableSystem
-        attribute="class"
-        defaultTheme="system"
-      >
-        <Navbar />
-        <ReduxProvider>{children}</ReduxProvider>
-      </ThemeProvider>
+      <ReduxProvider>
+        <ThemeProvider
+          disableTransitionOnChange
+          enableSystem
+          attribute="class"
+          defaultTheme="system"
+        >
+          <Navbar />
+          <section>{children}</section>
+        </ThemeProvider>
+      </ReduxProvider>
     </body>
   </html>
 );
