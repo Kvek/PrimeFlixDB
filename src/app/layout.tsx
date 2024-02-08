@@ -29,12 +29,7 @@ export const viewport: Viewport = {
 
 const RootLayout: WrapperComponentType = ({ children }) => (
   <html suppressHydrationWarning lang="en">
-    <body
-      className={cn(
-        "flex min-h-screen flex-col bg-background font-sans antialiased",
-        notoSans.variable,
-      )}
-    >
+    <body className={cn("font-sans antialiased", notoSans.variable)}>
       <ReduxProvider>
         <ThemeProvider
           disableTransitionOnChange
@@ -43,7 +38,7 @@ const RootLayout: WrapperComponentType = ({ children }) => (
           defaultTheme="system"
         >
           <Navbar />
-          <section>{children}</section>
+          <section className="min-h-screen">{children}</section>
         </ThemeProvider>
       </ReduxProvider>
     </body>
