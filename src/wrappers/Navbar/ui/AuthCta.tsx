@@ -1,11 +1,11 @@
 "use client";
+
 import { useAppSelector } from "@redux/store";
 import { selectAuthenticated } from "@redux/user/selector";
 
 import type { OptionalWrapperComponentType } from "@types";
 
-import { Login } from "./Login";
-import { Logout } from "./Logout";
+import { Login, Logout } from "@components/shared";
 
 export const AuthCta: OptionalWrapperComponentType = () => {
   const authenticated = useAppSelector(selectAuthenticated);

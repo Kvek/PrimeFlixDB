@@ -1,17 +1,44 @@
-import Image from "next/image";
-
 import type { OptionalWrapperComponentType } from "@types";
+
+import {
+  Home,
+  Logo,
+  Movies,
+  NavLink,
+  People,
+  Period,
+  Tv,
+} from "@components/shared";
 
 export const Navbar: OptionalWrapperComponentType = () => (
   <div className="fixed z-10 h-24 w-full bg-gradient-to-b from-background p-6">
-    <div className="h-12 w-full">
-      <div className="relative h-full w-40 select-none">
-        <Image
-          priority
-          alt="PrimeflixDB"
-          fill={true}
-          src={"/PrimeflixDB.svg"}
-        />
+    <div className="flex w-full  items-end">
+      <div className="mr-6 flex h-full select-none items-end">
+        <Logo />
+      </div>
+
+      <div className="flex items-center">
+        <NavLink className="flex h-full px-2" href={"/"}>
+          <Home />
+        </NavLink>
+
+        <Period />
+
+        <NavLink className="flex h-full px-2" href={"/movies"}>
+          <Movies />
+        </NavLink>
+
+        <Period />
+
+        <NavLink className="mx-2 flex h-full" href={"/tv"}>
+          <Tv />
+        </NavLink>
+
+        <Period />
+
+        <NavLink className="mx-2 flex h-full" href={"/people"}>
+          <People />
+        </NavLink>
       </div>
     </div>
   </div>
